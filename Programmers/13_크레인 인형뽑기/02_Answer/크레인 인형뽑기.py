@@ -10,10 +10,29 @@ for x in moves:
             board[x-1][i] = 0
 
             break
-#중복되면 answer에 사라진 숫자 개수만큼 더하기     
-for i in range(len(result)-1,0,-1):
+#중복되면 answer에 사라진 숫자 개수만큼 더하기
+switch = True       
+while switch == True:
+    for i in range(len(result)-1,0,-1):
+
+        if result[i] == result[i-1]:     
+            answer += 2
+            result.remove(i)
+            result.remove(i)
+            switch = True
+            
+            break
+        else:
+            switch = False
+            
+    if len(result) < 2:
+        switch = False
+
+print(answer)
     
-    if result[i] == result[i-1]:        
-        answer += 2
+            
+    
+       
+        
     
     
