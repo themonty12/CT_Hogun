@@ -1,20 +1,38 @@
-new_id = "123_.def"
+new_id = "...!@BaT#*..y.abcdefghijklm"
 new_id = new_id.lower()
 
-answer = ''
+answer = ""
+
+
 for t in new_id:
     if not (t.isalpha() or t.isnumeric()):
         if not( t == "-" or t == "_" or t == "."):
             new_id = new_id.replace(t,"")
     
-for i in range(0,len(new_id)):
-    if new_id[0] == ".":
-        new_id = new_id[1:]
-    if new_id[-1] == ".":
-        new_id = new_id[:len(new_id)-1]
-while len(new_id) < 3:
-    new_id += new_id[-1]
-if new_id == '':
-    new_id == "aaa"
+
 answer = new_id
+while not answer.find(".."):
+    answer = answer.replace("..",".")
+
+while (answer[0] == '.'):
+    if len(answer) <= 1:
+        answer = "aaa"
+    else:
+        if answer[0] == ".":
+            answer = answer[1:]
+
+if len(answer) > 15:
+    answer = answer[:15]
+
+while (answer[-1] == '.'):
+    if answer[-1] == ".":
+        answer = answer[:len(answer)-1]
+
+if answer == '':
+    answer == "aaa"
+
+while len(answer) < 3:
+    answer += answer[-1]
+    
+
 print(answer)    
