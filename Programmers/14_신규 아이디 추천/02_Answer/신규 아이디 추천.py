@@ -9,9 +9,8 @@ for t in new_id:
         if not( t == "-" or t == "_" or t == "."):
             new_id = new_id.replace(t,"")
     
-
 answer = new_id
-while not answer.find(".."):
+while not answer.find("..")== -1:
     answer = answer.replace("..",".")
 
 while (answer[0] == '.'):
