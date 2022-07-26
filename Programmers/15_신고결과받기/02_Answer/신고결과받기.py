@@ -29,5 +29,6 @@ for i in range(len(use_list)):
             
             if id_list[j] in use_list[i]:
                 print(i)
-                answer[i] +=1
+                answer[i] += 1
+                
 print(answer)
