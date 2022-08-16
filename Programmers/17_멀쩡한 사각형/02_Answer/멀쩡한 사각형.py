@@ -11,8 +11,8 @@ else:
     result = w*h
     temp = 0
     for i in range(0,w+1):
-        #print(math.ceil((math.floor(i * h/w) - temp)))
-        print(math.floor(i * h/w))
-        result -= math.ceil((math.floor(i * h/w) - temp))
+        result -= math.ceil((math.ceil(i * h/w) - temp))
         temp = math.floor(i * h/w)
+
 print(result)
+
